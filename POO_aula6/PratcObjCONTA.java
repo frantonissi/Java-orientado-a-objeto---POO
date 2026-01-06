@@ -3,7 +3,7 @@ package POO_aula6;
 public class PratcObjCONTA {
 //Creusa cc Joao cp
     public String numConta;
-    protected String tipo;  //cc -> conta corrente cp -> conta poupanca
+    public String tipo;  //cc -> conta corrente cp -> conta poupanca
     private String dono;
     private Float saldo; //cc ganha 50 reais, cp ganha 150
     private boolean status;
@@ -16,11 +16,12 @@ public class PratcObjCONTA {
         this.status = false;
     }
 
-    void abrir_Conta(){
-       if(this.tipo == "cc"){
-        this.saldo = this.saldo + 50.0f;
-       }else if(this.tipo == "cp"){
-        this.saldo = this.saldo + 150.0f;
+    void abrir_Conta(String t){
+        this.setTipo(t);
+       if ("cc".equals(t)){
+        this.setSaldo(50.0f);
+       }else if("cp".equals(t)){
+        this.setSaldo(150.0f);
        }
        this.status = true;
     }
@@ -28,7 +29,7 @@ public class PratcObjCONTA {
     void fechar_Conta(){
         if (this.saldo == 0){
             System.out.println("Conta fechada!");
-                this.status = false;
+            this.setStatus(false);
         }else if(this.saldo < 0){
             System.out.println("Safadinho(a), voce esta devendo, a conta nao pode ser fechada");
         }else{
@@ -36,31 +37,32 @@ public class PratcObjCONTA {
         }
     }
 
-    Float Depositar(Float valorDeposito){
+    void Depositar(Float valorDeposito){
         //status tem que ta = 1
-        if(this.status == true){
-            return valorDeposito;
+        if(this.getStatus()){
+            this.setSaldo(this.getSaldo()+valorDeposito);
+            System.out.println("Deposito realizado com sucesso na conta de " + this.getDono());
         }else{
-            return 0f;
+            System.out.println("Conta inexistente");
         }
 
     }
 
     void Sacar(Float s){
-        if(this.status == true && this.saldo > 0.0){
-            this.saldo = this.saldo - s;
+        if(this.getStatus() && this.getSaldo() >= s){
+            this.setSaldo(this.getSaldo()-s);
+            System.out.println("Saque realizado com sucesso na conta de " + this.getDono());
         }else{
             System.out.println("Conta inativa ou saldo invalido");
         }
         }
     
-
     void pagar_Mensal(){
-        if(this.status == true && this.saldo > 12.0 && this.tipo == "cc"){
-            this.saldo = this.saldo - 12.0f;
+        if(this.getStatus() && this.getSaldo() > 12.0 && this.getTipo() == "cc"){
+            this.setSaldo(this.getSaldo()-12);
             System.out.println("Pagamento realizado;");
-        }else if(this.status == true && this.saldo > 20.0 && this.tipo == "cp"){
-            this.saldo = this.saldo - 20.0f;
+        }else if(this.getStatus() && this.getSaldo() > 20.0 && this.getTipo() == "cp"){
+            this.setSaldo(this.getSaldo()-20);
             System.out.println("Pagamento realizado;");
         }
     }
@@ -90,8 +92,15 @@ public class PratcObjCONTA {
     public Float getSaldo() {
         return this.saldo;
     }
-    public void setSaldo(Float valorDeposito) {
-        this.saldo = this.saldo + Depositar(valorDeposito);
+    public void setSaldo(Float valor) {
+        this.saldo = valor;
+    }
+    /////////////////////////////////////
+    public boolean getStatus(){
+        return this.status;
+    }
+    public void setStatus(boolean s){
+        this.status = s;
     }
 
     void Estatus(){
@@ -99,7 +108,7 @@ public class PratcObjCONTA {
         System.out.println("Tipo: " + this.tipo);
         System.out.println("Dono: " + this.dono);
         System.out.println("Saldo: " + this.saldo);
-        System.out.println("Status: " + (this.status ? "Ativa" : "Inativa"));
+        System.out.println("Status: " + (this.status));
     }
     
 
