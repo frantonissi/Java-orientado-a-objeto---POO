@@ -1,10 +1,7 @@
 package POO_aula6;
 
-import java.util.Scanner;
-
 public class PratcObjCONTA {
 //Creusa cc Joao cp
-    private final Scanner scanner = new Scanner(System.in);
     public String numConta;
     protected String tipo;  //cc -> conta corrente cp -> conta poupanca
     private String dono;
@@ -39,11 +36,9 @@ public class PratcObjCONTA {
         }
     }
 
-    Float Depositar(){
+    Float Depositar(Float valorDeposito){
         //status tem que ta = 1
         if(this.status == true){
-            System.out.println("Digite quanto vc quer depositar: ");
-            Float valorDeposito = scanner.nextFloat();
             return valorDeposito;
         }else{
             return 0f;
@@ -53,7 +48,6 @@ public class PratcObjCONTA {
 
     void Sacar(Float s){
         if(this.status == true && this.saldo > 0.0){
-            System.out.println("Digite quanto voce quer sacar: ");
             this.saldo = this.saldo - s;
         }else{
             System.out.println("Conta inativa ou saldo invalido");
@@ -96,8 +90,8 @@ public class PratcObjCONTA {
     public Float getSaldo() {
         return this.saldo;
     }
-    public void setSaldo() {
-        this.saldo = this.saldo + Depositar();
+    public void setSaldo(Float valorDeposito) {
+        this.saldo = this.saldo + Depositar(valorDeposito);
     }
 
     void Estatus(){

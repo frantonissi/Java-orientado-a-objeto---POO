@@ -22,7 +22,7 @@ private static final Scanner scanner = new Scanner(System.in);
 
         c1.abrir_Conta();
 
-        c1.setSaldo();
+        c1.setSaldo(500.0f);
         c1.getSaldo();
 
         c1.Sacar(10.0f);
