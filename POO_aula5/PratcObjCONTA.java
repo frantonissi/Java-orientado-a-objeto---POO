@@ -1,4 +1,4 @@
-package POO_aula6;
+package POO_aula5;
 
 public class PratcObjCONTA {
 //Creusa cc Joao cp
