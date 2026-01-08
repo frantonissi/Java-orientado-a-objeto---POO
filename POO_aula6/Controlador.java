@@ -11,4 +11,9 @@ public interface Controlador {
     public abstract void desligarMudo();
     public abstract void play();
     public abstract void pause();
+    public abstract void AcessarStreams();
+    public abstract void Netflix();
+    public abstract void Amazon();
+    public abstract void HBOmax();
+
 }
