@@ -57,25 +57,33 @@ public class Luta {
 
     public void lutar(){
         if(this.aprovada){
+            System.out.println("##########DESAFIADO##########");
             desafiado.apresentar();
+            System.out.println("##########DESAFIANTE##########");
             desafiante.apresentar();
             Random aleatorio  = new Random();
             int vencedor = aleatorio.nextInt(3); //vai gerar 3 aleatorios
             switch (vencedor) {
                 case 0:
-                    System.out.println("Empatou");
+                    System.out.println("======================================== \n");
+                    System.out.println("Empatou \n");
                     desafiado.empatarLuta();
                     desafiante.empatarLuta();
+                    System.out.println("========================================");
                     break;
                 case 1:
-                    System.out.println(desafiado.getNome() + "ganhou a luta!");
+                    System.out.println("======================================== \n");
+                    System.out.println(desafiado.getNome() + " ganhou a luta! \n");
                     desafiado.ganharLuta();
                     desafiante.perderLuta();
+                    System.out.println("======================================== ");
                     break;
                 case 2:
-                    System.out.println(desafiante.getNome() + "ganhou a luta");
+                    System.out.println("======================================== \n");
+                    System.out.println(desafiante.getNome() + " ganhou a luta \n");
                     desafiado.perderLuta();
                     desafiante.ganharLuta();
+                    System.out.println("========================================");
             
                 default:
                     break;
