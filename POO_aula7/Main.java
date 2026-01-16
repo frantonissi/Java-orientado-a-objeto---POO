@@ -24,6 +24,7 @@ public class Main{
 
         Luta UEC01 = new Luta();
         UEC01.marcarLuta(l[0], l[1]);
+        UEC01.setAposta(Resultado.DESAFIADO);
         UEC01.lutar();
         l[0]. status();
         l[1].status();

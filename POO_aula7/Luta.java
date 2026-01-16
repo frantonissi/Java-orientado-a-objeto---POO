@@ -7,6 +7,7 @@ public class Luta {
     private Lutador desafiado;
     private int rounds;
     private boolean aprovada;
+    private Resultado aposta;
 
     //Metodos especiais:
     public Lutador getDesafiante(){
@@ -41,6 +42,14 @@ public class Luta {
         this.aprovada = aprovada;
     }
 
+    public Resultado getAposta(){
+        return aposta;
+    }
+
+    public void setAposta(Resultado aposta){
+        this.aposta = aposta;
+    }
+
     //////////////////////////////////////////////
     
     public void marcarLuta(Lutador l1, Lutador l2){
@@ -54,6 +63,7 @@ public class Luta {
             this.desafiante = null;
         }
     }
+    
 
     public void lutar(){
         if(this.aprovada){
@@ -62,33 +72,53 @@ public class Luta {
             System.out.println("##########DESAFIANTE##########");
             desafiante.apresentar();
             Random aleatorio  = new Random();
-            int vencedor = aleatorio.nextInt(3); //vai gerar 3 aleatorios
-            switch (vencedor) {
-                case 0:
+            Resultado vencedor = Resultado.values()[aleatorio.nextInt(Resultado.values().length)];
+            
+                        switch (vencedor) {
+                case EMPATE:
                     System.out.println("======================================== \n");
                     System.out.println("Empatou \n");
                     desafiado.empatarLuta();
                     desafiante.empatarLuta();
                     System.out.println("========================================");
+                    if(getAposta() == Resultado.EMPATE){
+                        System.out.println("Parabens, voce acertou a aposta no empate! \n");
+                    } else {
+                        System.out.println("Voce errou a aposta! \n");
+                    }
                     break;
-                case 1:
+                case DESAFIADO:
                     System.out.println("======================================== \n");
                     System.out.println(desafiado.getNome() + " ganhou a luta! \n");
                     desafiado.ganharLuta();
                     desafiante.perderLuta();
                     System.out.println("======================================== ");
+                    if(getAposta() == Resultado.DESAFIADO){
+                        System.out.println("Parabens, voce acertou a aposta no " + desafiado.getNome() + "! \n");
+                    } else {
+                        System.out.println("Voce errou a aposta! \n");
+                    }
                     break;
-                case 2:
+                case DESAFIANTE:
                     System.out.println("======================================== \n");
                     System.out.println(desafiante.getNome() + " ganhou a luta \n");
                     desafiado.perderLuta();
                     desafiante.ganharLuta();
                     System.out.println("========================================");
+                    if(getAposta() == Resultado.DESAFIANTE){
+                        System.out.println("Parabens, voce acertou a aposta no " + desafiante.getNome() + "! \n");
+                    } else {
+                        System.out.println("Voce errou a aposta! \n");
+                    }
+                    break;
             
                 default:
                     break;
             }
+
+            
         }
     }
-    
+
+      
 }
