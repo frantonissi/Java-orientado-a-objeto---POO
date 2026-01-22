@@ -8,6 +8,8 @@ public class Livro implements Publicacao {
     private int pagAtual;
     private boolean aberto;
     private Pessoa leitor;
+
+    //
     //Metodos especiais:
     public String getTitulo() {
         return titulo;
@@ -57,23 +59,43 @@ public class Livro implements Publicacao {
     @Override
     public void abrir() {
 
-        
+        this.setAberto(true);
+        System.out.println("Titulo: " + this.getTitulo());
+        System.out.println("Autor: " + this.getAutor());
+        System.out.println("A pagina atual do livro é: " + this.getPagAtual());
         
     }
     @Override
     public void fechar() {
+
+        this.setAberto(false);
+        System.out.println("Bye, Bye");
        
     }
     @Override
     public void folhear() {
+
+        if(this.isAberto() == true && this.getPagAtual() < (this.getTotalPag() - 30)){
+        this.setPagAtual(this.getPagAtual() + 30);
+        System.out.println("Voce está na pagina: " + this.getPagAtual());
+        }
        
     }
     @Override
     public void avancarPag() {
         
+        if(this.isAberto() == true && this.getPagAtual() < this.getTotalPag()){
+            this.setPagAtual(this.getPagAtual() + 1);
+            System.out.println("Voce esta na pagina: " + this.getPagAtual());
+        }
+
     }
     @Override
     public void voltarPag() {
+
+        if(this.isAberto() == true && this.getPagAtual() > 0){
+            this.setPagAtual(this.getPagAtual() - 1);
+        }
         
     }
     
