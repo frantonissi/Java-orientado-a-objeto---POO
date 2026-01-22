@@ -9,7 +9,17 @@ public class Livro implements Publicacao {
     private boolean aberto;
     private Pessoa leitor;
 
-    //
+    //Metodo construtor: 
+    public Livro(String t, String au, int tp, Pessoa le){
+
+        this.titulo = t;
+        this.autor = au;
+        this.totalPag = tp;
+        this.leitor = le;
+        this.aberto = false;
+        this.pagAtual = 0;
+
+    }
     //Metodos especiais:
     public String getTitulo() {
         return titulo;
@@ -55,6 +65,7 @@ public class Livro implements Publicacao {
         System.out.println("Total de paginas: " + getTotalPag());
         System.out.println("Pagina atual: " + getPagAtual());
         System.out.println("Aberto: " + isAberto());
+        System.out.println("sendo lido por: " + leitor.getNome());
     }
     @Override
     public void abrir() {
@@ -73,11 +84,13 @@ public class Livro implements Publicacao {
        
     }
     @Override
-    public void folhear() {
+    public void folhear(int p) {
 
-        if(this.isAberto() == true && this.getPagAtual() < (this.getTotalPag() - 30)){
-        this.setPagAtual(this.getPagAtual() + 30);
+        if(this.isAberto() == true && p <= this.getTotalPag()){
+        this.setPagAtual(this.getPagAtual() + p);
         System.out.println("Voce está na pagina: " + this.getPagAtual());
+        }else{
+            System.out.println("Vc nao pode ir para essa pagina!!!");
         }
        
     }
@@ -93,7 +106,7 @@ public class Livro implements Publicacao {
     @Override
     public void voltarPag() {
 
-        if(this.isAberto() == true && this.getPagAtual() > 0){
+        if(this.isAberto() == true && this.getPagAtual() >= 0){
             this.setPagAtual(this.getPagAtual() - 1);
         }
         

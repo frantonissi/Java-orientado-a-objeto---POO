@@ -7,6 +7,13 @@ public class Pessoa {
     private int idade;
     private String sexo;
 
+    //metodo construtor:
+    public Pessoa(String n, int i, String s){
+        this.nome = n;
+        this.idade = i;
+        this.sexo = s;
+    }
+
     //Metodos Especias:
     public String getNome() {
         return nome;
