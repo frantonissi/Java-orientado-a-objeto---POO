@@ -1,6 +1,6 @@
 package POO_aula10;
 
-public class Funcionario {
+public class Funcionario extends Pessoa {
 
     private String setor;
     private boolean trabalhando;
@@ -25,7 +25,26 @@ public class Funcionario {
         this.trabalhando = trabalhando;
     }
 
+    public void mudarTrabalho(String a){
+        System.out.println("Setor sera mudado: ");
+        this.setSetor(null);
+        this.setSetor(a);
+    }
 
+    @Override
+    public String toString() {
+        return "Funcionario [setor=" + setor + ", trabalhando=" + trabalhando + " Nome = " + getNome() + " Idade = " + getIdade() + " Sexo = " + getSexo() + "]";
+    }
+
+    /*public void status(){
+        System.out.println("Nome: " + this.getNome());
+        System.out.println("Idade: " + this.getIdade());
+        System.out.println("Sexo: " + this.getSexo());
+        System.out.println("Setor: " + this.getSetor());
+        System.out.println("Trabalhando: " + this.getTrabalhando());
+    }*/
+
+        
     
     
 }

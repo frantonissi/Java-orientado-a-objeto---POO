@@ -1,6 +1,6 @@
 package POO_aula10;
 
-public class Aluno {
+public class Aluno extends Pessoa {
     private boolean matric;
     private String curso;
 
@@ -28,10 +28,30 @@ public class Aluno {
     public void cancelarMatric(){
         if(this.getMatric()){
             this.setMatric(false);
-            this.setCurso("NULL");
+            this.setCurso(null);
         }else{
             System.out.println("Voce nao esta matriculado! ");
         }
     }
+
+    @Override
+    public String toString() {
+        return "Aluno [matricula = " + matric + ", curso = " + curso + ", Nome = " + getNome() + ", Idade = "
+                + getIdade() + ", Sexo = " + getSexo() + "]";
+    }
+
+   
+
+    
+
+    /*public void status(){
+        System.out.println("Nome: " + this.getNome());
+        System.out.println("Idade: " + this.getIdade());
+        System.out.println("Sexo: " + this.getSexo());
+        System.out.println("Curso: " + this.getCurso());
+        System.out.println("Matriculado: " + this.getMatric());
+    }*/
+
+    
 
 }
