@@ -1,15 +1,11 @@
-package POO_aula10;
+package POO_aula10e11;
 
 public class Aluno extends Pessoa {
     private boolean matric;
     private String curso;
+    private float mensalidade;
 
     //Metodos especiais:
-
-    public Aluno(boolean ma, String cu){
-        this.setCurso(cu);
-        this.setMatric(ma);
-    }
 
     public boolean getMatric(){
         return matric;
@@ -24,6 +20,12 @@ public class Aluno extends Pessoa {
     public void setCurso(String c){
         this.curso = c;
     }
+    public float getMensalidade(){
+        return mensalidade;
+    }
+    public void setMensalidade(float mensal){
+        this.mensalidade = mensal;
+    }
 
     public void cancelarMatric(){
         if(this.getMatric()){
@@ -31,6 +33,15 @@ public class Aluno extends Pessoa {
             this.setCurso(null);
         }else{
             System.out.println("Voce nao esta matriculado! ");
+        }
+    }
+
+    public void pagarMensalidade(){
+        if(this.getMatric()){
+        float Matricula = this.getMensalidade();
+        System.out.println("Você que nao é bolsista deverá pagar de matricula: " + Matricula);
+        System.out.println("Processando ...");
+        System.out.println("Matricula paga! ");
         }
     }
 

@@ -1,6 +1,6 @@
-package POO_aula10;
+package POO_aula10e11;
 
-public class Pessoa {
+public abstract class Pessoa {
 
     private String nome;
     private int idade;
@@ -32,7 +32,7 @@ public class Pessoa {
 
     @Override
     public String toString() {
-        return "Pessoa [nome=" + nome + ", idade=" + idade + ", sexo=" + sexo + "]";
+        return "Dados [nome=" + nome + ", idade=" + idade + ", sexo=" + sexo + "]";
     }
 
 
