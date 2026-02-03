@@ -1,7 +1,7 @@
 package POO_aula10e11;
 
 
-public class Tecnico {
+public class Tecnico extends Pessoa {
     
     private String registroprofissional;
 
@@ -16,5 +16,13 @@ public class Tecnico {
     public void praticar(String a){
         System.out.println("Praticando " + a);
     }
+
+    @Override
+    public String toString() {
+        return "Tecnico [nome=" + nome + ", registroprofissional=" + registroprofissional + ", idade=" + idade
+                + ", sexo=" + sexo + "]";
+    }
+
+    
 
 }

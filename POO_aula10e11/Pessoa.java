@@ -2,9 +2,9 @@ package POO_aula10e11;
 
 public abstract class Pessoa {
 
-    private String nome;
-    private int idade;
-    private String sexo;
+    protected String nome;
+    protected int idade;
+    protected String sexo;
 
     public void fazerAniver(){
         this.setIdade(this.getIdade() + 1);
