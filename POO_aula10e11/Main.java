@@ -6,6 +6,7 @@ public class Main {
         Aluno a1 = new Aluno();
         Visitante v1 = new Visitante();
         Bolsista b1 = new Bolsista();
+        Tecnico t1 = new Tecnico();
 
         v1.setIdade(18);
         v1.setNome("Carlos Roberto");
@@ -34,6 +35,13 @@ public class Main {
         b1.setBolsaRenovada(true);
         b1.pagarMensalidade();
         System.out.println(b1.toString());
+        System.out.println("/////////////////////////////////////\n");
+
+        t1.setIdade(92);
+        t1.setNome("Cleber");
+        t1.setSexo("masculo");
+        t1.setRegistroprofissional("Garoto do TI");
+        System.out.println(t1.toString());
     }
 }
 
