@@ -3,7 +3,7 @@ package POO_aula10e11;
 public class Aluno extends Pessoa {
     private boolean matric;
     private String curso;
-    private float mensalidade;
+    protected float mensalidade;
 
     //Metodos especiais:
 

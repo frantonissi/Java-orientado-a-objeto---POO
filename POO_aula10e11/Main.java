@@ -30,9 +30,10 @@ public class Main {
         b1.setMatric(true);
         b1.setCurso("Moda");
         b1.setBolsa(30);
-        b1.setBolsaRenovada(true);
         b1.setMensalidade(1000);
+        b1.setBolsaRenovada(true);
         b1.pagarMensalidade();
         System.out.println(b1.toString());
     }
 }
+

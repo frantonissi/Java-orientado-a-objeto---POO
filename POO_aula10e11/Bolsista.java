@@ -1,17 +1,17 @@
 package POO_aula10e11;
 
 public class Bolsista extends Aluno{
-        private int bolsa;
+        private float bolsa;
         private boolean bolsaRenovada;
 
         //Metodos especias:
         
-        public int getBolsa() {
+        public float getBolsa() {
             return bolsa;
         }
 
-        public void setBolsa(int bolsa) {
-            this.bolsa = bolsa;
+        public void setBolsa(int b) {
+            this.bolsa = b;
         }
 
         public boolean isBolsaRenovada() {
@@ -33,8 +33,7 @@ public class Bolsista extends Aluno{
         public void pagarMensalidade(){
             if(this.getMatric() & this.isBolsaRenovada()){
                 
-                float novaMatricula = (this.getBolsa()/100) * this.getMensalidade();
-                System.out.println("Você que é bolsista deverá pagar de matricula: " + novaMatricula);
+                System.out.println("Você que é bolsista deverá pagar de matricula: " + (this.mensalidade - (this.mensalidade * (this.bolsa/100))));
                 System.out.println("Processando ...");
                 System.out.println("Matricula paga! ");
             }
