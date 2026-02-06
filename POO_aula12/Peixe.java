@@ -39,7 +39,11 @@ public class Peixe extends Animal {
     }
 
     public void soltarBolha(){
+        if(this.isSoltarBolha()){
         System.out.println("Soltando bolha ");
+        }else{
+            System.out.println("O peixe nao esta a fim de soltar bolha ");
+        }
     }
     
 }
