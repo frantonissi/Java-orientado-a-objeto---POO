@@ -3,18 +3,16 @@ package POO_aula12;
 public class Ave extends Animal{
     
     private String corPena;
-    private boolean fazerNinho;
+    
     public String getCorPena() {
         return corPena;
     }
     public void setCorPena(String corPena) {
         this.corPena = corPena;
     }
-    public boolean isFazerNinho() {
-        return fazerNinho;
-    }
-    public void setFazerNinho(boolean fazerNinho) {
-        this.fazerNinho = fazerNinho;
+    
+    public void fazerNinho(){
+        System.out.println("Eita casa ta ficando boa! ");
     }
 
     @Override
@@ -31,5 +29,13 @@ public class Ave extends Animal{
     public void emitirSom(){
         System.out.println("Cantarolar do passaro gordo");
     }
+    @Override
+    public String toString() {
+        return "Ave [peso=" + peso + ", corPena=" + corPena + ", idade=" + idade + ", membros=" + membros + "]";
+    }
+   
+
+
+    
 
 }

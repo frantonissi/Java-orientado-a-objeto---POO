@@ -26,6 +26,12 @@ public abstract class Animal {
     public void setMembros(int membros) {
         this.membros = membros;
     }
+    @Override
+    public String toString() {
+        return "Animal [peso=" + peso + ", idade=" + idade + ", membros=" + membros + "]";
+    }
+
+    
 
     
 

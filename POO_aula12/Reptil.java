@@ -26,4 +26,11 @@ public class Reptil extends Animal{
         System.out.println("Som de escamoso ");
     }
 
+    @Override
+    public String toString() {
+        return "Reptil [peso=" + peso + ", corEscama=" + corEscama + ", idade=" + idade + ", membros=" + membros + "]";
+    }
+
+    
+
 }

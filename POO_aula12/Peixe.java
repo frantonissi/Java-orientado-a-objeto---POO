@@ -45,5 +45,12 @@ public class Peixe extends Animal {
             System.out.println("O peixe nao esta a fim de soltar bolha ");
         }
     }
+
+    @Override
+    public String toString() {
+        return "Peixe [peso=" + peso + ", corEscama=" + corEscama + ", idade=" + idade + ", soltarBolha=" + soltarBolha
+                + ", membros=" + membros + "]";
+    }
+    
     
 }

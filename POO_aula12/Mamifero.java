@@ -26,5 +26,12 @@ public class Mamifero extends Animal{
     public void emitirSom(){
         System.out.println("Som de bebedor de leite ");
     }
+
+    @Override
+    public String toString() {
+        return "Mamifero [peso=" + peso + ", corPelo=" + corPelo + ", idade=" + idade + ", membros=" + membros + "]";
+    }
+
+    
     
 }
