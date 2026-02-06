@@ -35,7 +35,11 @@ public class Peixe extends Animal {
 
     @Override
     public void emitirSom(){
-        System.out.println("Glup Glub");
+        System.out.println("Peixe nao faz som");
+    }
+
+    public void soltarBolha(){
+        System.out.println("Soltando bolha ");
     }
     
 }
