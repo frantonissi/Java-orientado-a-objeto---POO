@@ -28,6 +28,7 @@ public class Cachorro extends Lobo {
 
             if(dono){
                 System.out.println("Te amo dono");
+                this.emitirSom();
             }else{
                 System.out.println("Morra! invasor");
             }

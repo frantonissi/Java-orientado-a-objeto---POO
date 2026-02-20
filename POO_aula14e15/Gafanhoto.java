@@ -29,4 +29,9 @@ public class Gafanhoto extends Pessoa{
     public void viuMaisum(){
         this.setTotalAssistido(this.getTotalAssistido()+1);
     }
+
+    @Override
+    public String toString() {
+        return "Gafanhoto " + super.toString() + " [login=" + login + ", totalAssistido=" + totalAssistido + "]";
+    }
 }
