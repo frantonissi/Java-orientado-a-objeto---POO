@@ -44,7 +44,9 @@ public class Video implements AcoesVideo{
     }
 
     public void setAvaliacao(float avaliacao) {
-        this.avaliacao = avaliacao;
+        float novaAva;
+        novaAva = (this.avaliacao + avaliacao)/this.views;
+        this.avaliacao = novaAva;
     }
 
     public String getTitulo() {
